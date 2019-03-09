@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  puppetboard:
+    external: false
+
+services:
+  puppetboard:
+    restart: always
+    networks:
+      puppetboard:
+    image: puppet/puppetboard
+    ports:
+      - "8000:8000"
