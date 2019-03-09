@@ -1,4 +1,4 @@
-docker run -it -p 8000:80 --network='pupperware_default' -v /home/rsletten/pupperware/volumes/puppetdb/ssl:/etc/puppetlabs/puppetdb/ssl \
+docker run -it -p 192.168.1.200:80:80 --network='pupperware_default' -v /home/rsletten/pupperware/volumes/puppetdb/ssl:/etc/puppetlabs/puppetdb/ssl \
   -e PUPPETDB_HOST=puppetdb \
   -e PUPPETDB_PORT=8081 \
   -e PUPPETDB_SSL_VERIFY=/etc/puppetlabs/puppetdb/ssl/certs/ca.pem \
