@@ -12,7 +12,7 @@ services:
       - PUPPETDB_CERT=/etc/puppetlabs/puppetdb/ssl/certs/puppetdb.pem
       - PUPPETDB_KEY=/etc/puppetlabs/puppetdb/ssl/private_keys/puppetdb.pem
       - INVENTORY_FACTS='Hostname,fqdn, IP Address,ipaddress'
-      - ENABLE_CATALOG=True \
+      - ENABLE_CATALOG=True
       - GRAPH_FACTS='architecture,puppetversion,osfamily'
     image: puppetboard
     ports:
