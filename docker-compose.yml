@@ -14,7 +14,7 @@ services:
       - INVENTORY_FACTS='Hostname,fqdn, IP Address,ipaddress'
       - ENABLE_CATALOG=True
       - GRAPH_FACTS='architecture,puppetversion,osfamily'
-    image: puppetboard
+    image: puppetboard:1.1.0
     ports:
       - "192.168.1.200:80:80"
     volumes:

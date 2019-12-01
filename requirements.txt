@@ -8,4 +8,4 @@ itsdangerous >=0.23
 pypuppetdb >=1.0.0
 requests >=2.13.0
 CommonMark==0.7.2
-puppetboard==1.0.0
+puppetboard==1.1.0
