@@ -6,11 +6,11 @@ services:
     networks:
       pupperware_default:
     environment: 
-      - PUPPETDB_HOST=puppetdb
+      - PUPPETDB_HOST=puppetdb.rsletten.com
       - PUPPETDB_PORT=8081
       - PUPPETDB_SSL_VERIFY=/etc/puppetlabs/puppetdb/ssl/certs/ca.pem
-      - PUPPETDB_CERT=/etc/puppetlabs/puppetdb/ssl/certs/puppetdb.pem
-      - PUPPETDB_KEY=/etc/puppetlabs/puppetdb/ssl/private_keys/puppetdb.pem
+      - PUPPETDB_CERT=/etc/puppetlabs/puppetdb/ssl/certs/puppet.rsletten.com.pem
+      - PUPPETDB_KEY=/etc/puppetlabs/puppetdb/ssl/private_keys/puppet.rsletten.com.pem
       - INVENTORY_FACTS='Hostname,fqdn, IP Address,ipaddress'
       - ENABLE_CATALOG=True
       - GRAPH_FACTS='architecture,puppetversion,osfamily'
@@ -18,8 +18,14 @@ services:
     ports:
       - "192.168.1.200:80:80"
     volumes:
-      - /home/rsletten/pupperware/volumes/puppetdb/ssl:/etc/puppetlabs/puppetdb/ssl
+      #- /home/rsletten/pupperware/volumes/puppetdb/ssl:/etc/puppetlabs/puppetdb/ssl
+      - pupperware_puppetserver-config:/etc/puppetlabs/puppetdb
 
 networks:
   pupperware_default:
     external: true
+
+volumes:
+  pupperware_puppetserver-config:
+    external: true
+
